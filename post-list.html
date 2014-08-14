@@ -1,4 +1,4 @@
-﻿<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/polymer/polymer.html">
 <link rel="import" href="../post-service/post-service.html">
 <link rel="import" href="post-card.html">
 
@@ -15,9 +15,18 @@
     </style>
     
     <!-- add markup here -->
-    
+    <post-service id="service" posts="{{posts}}">
+    </post-service>
   </template>
-
+    <div layout vertical center>
+      <template repeat="{{post in posts}}">
+        <post-card>
+          <img src="{{post.avatar}}" width="70" height="70">
+          <h2>{{post.username}}</h2>
+          <p>{{post.text}}</p>
+        </post-card>
+      </template>
+    </div>
   <script>
   Polymer({});
   </script>
