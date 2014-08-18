@@ -14,6 +14,7 @@
     href="bower_components/paper-tabs/paper-tabs.html">
  <link rel = "import"
        href="bower_components/paper-ripple/paper-ripple.html">
+ <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
   <script type="text/javascript" src="JS/jquery-1.8.2.min.js" ></script>
   <script type="text/javascript" src="JS/index.js" ></script>
   <link rel="stylesheet" type="text/css" href="CSS/index.css">
@@ -21,13 +22,13 @@
 </head>
 
 <body unresolved touch-action="auto">
-  <core-header-panel>
-    <core-toolbar>
-      <paper-tabs id="tabs" selected="socialNet" self-end>
-        <paper-tab name="socialNet">SOCIAL NETWORK</paper-tab>
-        <paper-tab name="simpleMap">SIMPLE MAP</paper-tab>
-      </paper-tabs>
-    </core-toolbar>
+   <core-header-panel mode="standard" id="core_header_panel">
+      <core-toolbar id="core_toolbar">
+        <core-icon-button id="core_icon_button" icon="home"></core-icon-button>
+        <div id="div"> Demo Polymer GDG</div>
+      </core-toolbar>
+      <section id="section"></section>
+    </core-header-panel>
 
     <!-- main page content will go here -->
       <div id = "container">
