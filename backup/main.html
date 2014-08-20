@@ -7,11 +7,11 @@
   <link href="bower_components/core-icons/core-icons.html" rel="import">
   <link href="bower_components/core-icon-button/core-icon-button.html" rel="import">
   <link href="bower_components/core-toolbar/core-toolbar.html" rel="import"> 
-
+  <link href="core-animated-pages.html" rel="import">
   <link rel="import" href="bower_components/google-map/google-map.html">
   <link rel="import" href="bower_components/google-map/google-map-directions.html">
     <link rel="import" href="my-element1.html">
-    <link href="core-animated-pages.html" rel="import">
+  
   <style>
     body {
       font-family: sans-serif;
@@ -57,46 +57,44 @@
       <section vertical layout>
 
         <div id="container" flex horizontal wrap around-justified layout hero-p>
-          <template repeat="{{item in items}}">
-            <div class="card" vertical center center-justified layout hero-id="item-{{item}}" hero?="{{$.pages.selected ===                 item + 1 || lastSelected === item + 1}}" on-tap="{{selectView}}"><span cross-fade>{{item}}</span></div>
-               
-          </template>
+         
+            <div class="card" vertical center center-justified layout hero-id="item-1" hero?="{{$.pages.selected === 1 ||                           lastSelected === 1}}" on-tap="{{selectView}}"><span cross-fade>0</span></div>   
         </div>
-
+          
+           <div id="container" flex horizontal wrap around-justified layout hero-p>
+         
+            <div class="card" vertical center center-justified layout hero-id="item-2" hero?="{{$.pages.selected === 2 ||                           lastSelected === 2}}" on-tap="{{selectView}}"><span cross-fade>1</span></div>   
+            </div>
       </section>
 
        
-      <template repeat="{{item in items}}">
+     
         <section vertical layout>
-            <div class="view" flex vertical center center-justified layout hero-id="item-0" hero?="{{$.pages.selected === 1 || $.pages.selected === 0}}">    
-            
-<google-map latitude="37.779" longitude="-122.3892" disableDefaultUI fit>
-  <google-map-marker latitude="37.779" longitude="-122.3892"
-                     title="Go Giants!" draggable="true">
-    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/San_Francisco_Giants_Cap_Insignia.svg/200px-San_Francisco_Giants_Cap_Insignia.svg.png" />
-  </google-map-marker>
-</google-map>
-<google-map-directions startAddress="San Francisco" endAddress="Mountain View"></google-map-directions>
-
-<script>
-  var gmap = document.querySelector('google-map');
-  gmap.addEventListener('api-load', function(e) {
-    document.querySelector('google-map-directions').map = this.map;
-  });
-</script>
-
-            
-            </div>    
-          <div class="view" flex vertical center center-justified layout hero-id="item-1" hero?="{{$.pages.selected === 2 || $.pages.selected === 0}}">
+          <div class="view" flex vertical center center-justified layout hero-id="item-1" hero?="{{$.pages.selected === 1 ||                    $.pages.selected === 0}}">
               
-            <proto-element></proto-element>
+           
+            <google-map latitude="37.779" longitude="-122.3892" disableDefaultUI fit>
+              <google-map-marker latitude="37.779" longitude="-122.3892"
+                                 title="Go Giants!" draggable="true">
+                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/San_Francisco_Giants_Cap_Insignia.svg/200px-San_Francisco_Giants_Cap_Insignia.svg.png" />
+              </google-map-marker>
+            </google-map>
+            <google-map-directions startAddress="San Francisco" endAddress="Mountain View"></google-map-directions>
+
+            <script>
+              var gmap = document.querySelector('google-map');
+              gmap.addEventListener('api-load', function(e) {
+                document.querySelector('google-map-directions').map = this.map;
+              });
+            </script>
+           </div>
             
-         
-            
+            <div class="view" flex vertical center center-justified layout hero-id="item-1" hero?="{{$.pages.selected === 1 ||                    $.pages.selected === 0}}">
             
             </div>
+            
         </section>
-      </template>
+     
 
 
 
@@ -117,7 +115,8 @@
 
       scope.selectView = function(e) {
         var i = e.target.templateInstance.model.item;
-        this.$.pages.selected = i+1;
+        this.$.pages.selected = 1;
+          console.log("taped");
       }
 
       scope.back = function() {
