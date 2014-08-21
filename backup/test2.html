@@ -50,13 +50,13 @@
       <core-toolbar id="core_toolbar">
         <core-icon-button id="core_icon_button" icon="polymer"></core-icon-button>
         <div id="div"> Demo Polymer GDG</div>
-        <core-icon-button id="core_icon_button" icon="arrow-back" onclick="minusOne();" ></core-icon-button>
-        <core-icon-button id="core_icon_button" icon="home" onclick="firstEle();" ></core-icon-button>  
+        <core-icon-button id="core_icon_button" icon="arrow-back"></core-icon-button>
+        <core-icon-button id="core_icon_button" icon="home"></core-icon-button>  
         <core-icon-button id="core_icon_button" icon="arrow-forward" onclick="plusOne();"></core-icon-button>
       </core-toolbar>
      
 
-  <core-animated-pages  transitions="cross-fade-all">
+  <core-animated-pages onclick="stuff();" transitions="cross-fade-all">
     <section>
       <div layout vertical center center-justified style="background:red;">
          <google-map latitude="37.779" longitude="-122.3892" disableDefaultUI fit>
@@ -94,11 +94,9 @@
       var s = document.querySelector('select');
       document.querySelector('core-animated-pages').transitions = document.querySelector('select').options[s.selectedIndex].value;
     }
- 
+    /*  
     var up = true;
     var max = 3;
-      
-    /*  
     function stuff() {
       var p = document.querySelector('core-animated-pages');
       if (up && p.selected === max || !up && p.selected === 0) {
@@ -112,20 +110,7 @@
     }
     */
       function plusOne(){
-           var p = document.querySelector('core-animated-pages');
-          if ( p.selected < max ) 
-          p.selected += 1;
-      
-      }
-      
-      function minusOne(){
-           var p = document.querySelector('core-animated-pages');
-          if ( p.selected >= 0 ) 
-            p.selected -= 1;
-      }
-      function firstEle(){
-           var p = document.querySelector('core-animated-pages');
-            p.selected = 0;
+        console.log("plus one pushed");   
       }
       
   </script>
