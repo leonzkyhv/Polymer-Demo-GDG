@@ -1,0 +1,19 @@
+{
+  "name": "yt-video",
+  "private": true,
+  "dependencies": {
+    "core-ajax": "Polymer/core-ajax#master",
+    "google-apis": "GoogleWebComponents/google-apis#master"
+  },
+  "homepage": "https://github.com/Polymer/yt-video",
+  "_release": "eef69f6641",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "eef69f6641662e5038ac53b2a1b838600c394e90"
+  },
+  "_source": "git://github.com/Polymer/yt-video.git",
+  "_target": "master",
+  "_originalSource": "Polymer/yt-video",
+  "_direct": true
+}

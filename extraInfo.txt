@@ -9,3 +9,6 @@
     <script>
       document.querySelector('google-map-search').search();
     </script>
+	
+	
+	https://github.com/PolymerLabs/more-elements/blob/master/bower.json
