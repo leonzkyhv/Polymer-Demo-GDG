@@ -1,8 +1,7 @@
 {
-  "name": "core-component-page",
+  "name": "smoothie-chart",
   "private": true,
   "dependencies": {
-    "platform": "Polymer/platform#master",
     "polymer": "Polymer/polymer#master"
   }
 }

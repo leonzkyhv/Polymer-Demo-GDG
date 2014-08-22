@@ -1,8 +1,7 @@
 {
-  "name": "core-component-page",
+  "name": "cool-clock",
   "private": true,
   "dependencies": {
-    "platform": "Polymer/platform#master",
     "polymer": "Polymer/polymer#master"
   }
 }
