@@ -1,0 +1,32 @@
+<link rel="import" href="bower_components/smoothie-chart/smoothie-chart.html">
+
+<polymer-element name="my-smoothie">
+
+  <template>
+    <style>    
+      :host {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      #smoothie_chart {
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <smoothie-chart id="smoothie_chart"></smoothie-chart>
+  </template>
+
+  <script>
+
+    Polymer('my-smoothie', {
+      
+    });
+
+  </script>
+
+</polymer-element>
