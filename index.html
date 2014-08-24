@@ -1,74 +1,118 @@
 <!doctype html>
 <html>
-
 <head>
-  <title>Demo GDG</title>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
   <script src="bower_components/platform/platform.js"></script>
-  <link rel="import" href="bower_components/font-roboto/roboto.html">
+  <script type="text/javascript" src="JS/jquery-1.8.2.min.js" ></script>
+  <script type="text/javascript" src="JS/index.js" ></script>
+    
+  <link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+  <link href="bower_components/core-animated-pages/transitions/cross-fade.html" rel="import">
+  <link href="bower_components/core-animated-pages/transitions/slide-from-right.html" rel="import">
+  
   <link rel="import"
     href="bower_components/core-header-panel/core-header-panel.html">
   <link rel="import"
     href="bower_components/core-toolbar/core-toolbar.html">
-  <link rel="import"
-    href="bower_components/paper-tabs/paper-tabs.html">
- <link rel = "import"
-       href="bower_components/paper-ripple/paper-ripple.html">
- <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
     
-    <link rel="import" href="bower_components/google-map/google-map.html">
-  <link rel="import" href="bower_components/google-map/google-map-directions.html">
+    <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="map_app.html">
+    <link rel="import" href="my-voice-element.html">
+    <link rel="import" href="my_smoothie.html">
+    <link rel="import" href="costom-element.html">
+    <link rel="import" href="google-maps-element.html">
+    <link rel="import" href="bower_components/yt-video/yt-search-video.html">
+    <link rel="import" href="my-element1.html">
+    <link rel="import" href="bower_components/xkcd-img/src/xkcd-img.html">
+     <link rel="import" href="bower_components/voice-elements/src/voice-player.html">
     
-  <script type="text/javascript" src="JS/jquery-1.8.2.min.js" ></script>
-  <script type="text/javascript" src="JS/index.js" ></script>
-  <link rel="stylesheet" type="text/css" href="CSS/index.css">
-  <link rel="import" href="my-element1.html">
+     <link rel="stylesheet" type="text/css" href="CSS/index.css">
+
 
 </head>
+<body unresolved>
 
-<body unresolved touch-action="auto">
    <core-header-panel mode="standard" id="core_header_panel">
       <core-toolbar id="core_toolbar">
-        <core-icon-button id="core_icon_button" icon="home"></core-icon-button>
+        <core-icon-button id="core_icon_button" icon="polymer"></core-icon-button>
         <div id="div"> Demo Polymer GDG</div>
+        <core-icon-button id="core_icon_button" icon="arrow-back" onclick="minusOne();" ></core-icon-button>
+        <core-icon-button id="core_icon_button" icon="home" onclick="firstEle();" ></core-icon-button>  
+        <core-icon-button id="core_icon_button" icon="arrow-forward" onclick="plusOne();"></core-icon-button>
       </core-toolbar>
-      <section id="section"></section>
-    </core-header-panel>
-
-    <!-- main page content will go here -->
-      <div id = "container">
-          
-       <div id="simpleDemo" style="text-align: center" class="card">
-           <span >Simple Demo</span>
-           <my-element></my-element>
-          <paper-ripple class="recenteringTouch" fit></paper-ripple>
-           
-        </div>  
-       <div id="mapDemo" class="card">
-          <span>Simple Map Demo </span>
-          <paper-ripple class="recenteringTouch" fit></paper-ripple>
-
-        </div>
-         <div id = "demo3" class="card">
-           Demo 3
-          <paper-ripple class="recenteringTouch" fit></paper-ripple>
-
-        </div>
-         <div id = "demo4" class="card ">
-           Demo 4
-          <paper-ripple class="recenteringTouch" fit></paper-ripple>
-
+     
+ </core-header-panel>
+  <core-animated-pages transitions="cross-fade-all">
+    <section>
+      <div  class = "slide" layout vertical center center-justified style="background:gray;">
+         <proto-map></proto-map>
+      </div>
+    </section>
+    <section>
+      <div class = "slide" layout vertical center center-justified>
+        <div>
+            <!-- <topeka-main></topeka-main> -->
+            <!-- <xkcd-img></xkcd-img> -->
+            <proto-voice></proto-voice>
         </div>
       </div>
-    
-  </core-header-panel>
-
+    </section>
+    <section>
+      <div class = "slide"  style="background:purple; ">
+          <div >
+            <my-smoothie class ="graph" ></my-smoothie>  
+          </div>
+      </div>
+    </section>
+    <section>
+      <div  class = "slide" layout vertical center center-justified style="background:orange;">
+        <div>
+             <input>
+                <yt-search-video></yt-search-video>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:green;">
+        <div>
+           <proto-element myName="Leonardo" some ="Baldo sucks"></proto-element>
+        </div>
+      </div>
+    </section>
+  </core-animated-pages>
+ 
   <script>
-   /*var tabs = document.querySelector('paper-tabs');
-    tabs.addEventListener('core-select', function(e) {
-      console.log("Selected: " + tabs.selected);
-    });*/
+    function change() {
+      var s = document.querySelector('select');
+      document.querySelector('core-animated-pages').transitions = document.querySelector('select').options[s.selectedIndex].value;
+    }
+ 
+    var up = true;
+    var max = 4;
+      
+  
+      function plusOne(){
+           var p = document.querySelector('core-animated-pages');
+          if ( p.selected < max ) 
+          p.selected += 1;
+      
+      }
+      
+      function minusOne(){
+           var p = document.querySelector('core-animated-pages');
+          if ( p.selected >= 0 ) 
+            p.selected -= 1;
+      }
+      function firstEle(){
+           var p = document.querySelector('core-animated-pages');
+            p.selected = 0;
+      }
+       document.querySelector('input').addEventListener('change', function(e) {
+        document.querySelector('yt-search-video').ImFeelingLucky = e.target.value;
+      })
+       
+       /* Speach */
+
   </script>
 </body>
-
 </html>

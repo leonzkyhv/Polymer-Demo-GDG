@@ -1,15 +1,30 @@
 <link rel="import"
       href="bower_components/polymer/polymer.html">
+ <link rel = "import"
+       href="bower_components/paper-ripple/paper-ripple.html">
+<style>
+   .card{
+    background-color: red;   
+   }
+</style>
 
-<polymer-element name="proto-element">
+<polymer-element name="proto-element" attributes = "myName">
   <template>
-    <span>I'm <b>proto-element</b>. Check out my prototype.</span>
+    <div class="card">
+       
+         <span>Hi! my name is <b> {{ myName }} </b>. Check out Polymer. {{some}}</span>
+         <paper-ripple class="recenteringTouch" fit>
+      
+        </paper-ripple>
+    </div>
   </template>
   <script>
     Polymer('proto-element', {
       ready: function() {
+          
         //...
-      }
+      },
+      some: "OYA"
     });
   </script>
 </polymer-element>

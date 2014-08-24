@@ -1,0 +1,45 @@
+<link rel="import"
+      href="bower_components/polymer/polymer.html"> 
+<link rel="import" href="bower_components/voice-elements/src/voice-player.html">
+
+<polymer-element name="proto-voice">
+  <template>
+         <voice-player id="playerelement" accent="es-ES" text=""></voice-player>
+            <div class="example">
+                    <form id="playerform" class="pure-form">
+                       
+                        <fieldset>
+                            <div>Introduce texto y escucha</div>
+                            <input id="playerinput" type="text" value="Bienvenida Comunidad">
+                            <button id="player-submit" class="pure-button pure-button-primary">Speak!</button>
+                        </fieldset>
+                    </form>
+                </div>
+  </template>
+  <script>
+       var form ;
+        var    input;
+        var   element;
+       window.addEventListener('polymer-ready', function(e) {
+
+                    element.setAttribute('text', input.value);
+
+                    input.addEventListener('input', function(e) {
+                        element.setAttribute('text', input.value);
+                    });
+
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        element.speak();
+                    });
+                });
+    Polymer('proto-voice', {
+      ready: function() {
+        //...
+          form = this.$.playerform;
+          input = this.$.playerinput;
+           element = this.$.playerelement;
+      }
+    });
+  </script>
+</polymer-element>
