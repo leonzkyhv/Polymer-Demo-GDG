@@ -39,6 +39,8 @@
         <core-icon-button id="core_icon_button" icon="arrow-back" onclick="minusOne();" ></core-icon-button>
         <core-icon-button id="core_icon_button" icon="home" onclick="firstEle();" ></core-icon-button>  
         <core-icon-button id="core_icon_button" icon="arrow-forward" onclick="plusOne();"></core-icon-button>
+        <core-icon-button id="core_icon_button" icon="drive-spreadsheet" onclick="changeToSpreed();"></core-icon-button>  
+         
       </core-toolbar>
      
  </core-header-panel>
@@ -74,8 +76,8 @@
     </section>
     <section>
       <div layout vertical center center-justified style="background:green;">
-        <div>
-           <proto-element myName="Leonardo" some ="Baldo sucks"></proto-element>
+        <div >
+           <proto-element myName="Leonardo" img="images/avatar-01.svg"></proto-element>
         </div>
       </div>
     </section>
@@ -112,7 +114,12 @@
       })
        
        /* Speach */
-
+       /* Spreedsheet */
+       
+       function changeToSpreed(){
+           var win = window.open("http://localhost:8000/bower_components/google-sheets/demo.html", '_blank');
+           win.focus();
+       }
   </script>
 </body>
 </html>

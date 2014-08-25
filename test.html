@@ -4,13 +4,36 @@
    
     
       <script src="bower_components/platform/platform.js"></script>
-         <link rel="import"
-      href="bower_components/polymer/polymer.html"> 
-     <link rel="import" href="my-voice-element.html">
-
+         <link rel="import" href="bower_components/polymer/polymer.html"> 
+     <link rel="import" href="my-element1.html">
+      <style>
+        #content{  
+            margin-left:auto ;
+            margin-right: auto ;
+            display: inline-block;
+           
+        }
+          #cont{
+            align-content: center;
+            text-align: center; 
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            
+          }
+          body{
+           height: 1000px;   
+          }
+     
+      </style>
   </head>
   <body>
-     <proto-voice></proto-voice>
+     <!--<img src="images/avatar-02.svg"> -->
+      <div id="cont" content vertical>
+          <div id="content" >
+            <proto-element myName="LEO" img="images/avatar-01.svg"></proto-element>
+          </div>
+       </div>
   </body>
     
 </html>

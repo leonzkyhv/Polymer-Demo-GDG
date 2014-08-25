@@ -12,3 +12,7 @@
 	
 	
 	https://github.com/PolymerLabs/more-elements/blob/master/bower.json
+    
+    http://polymer.github.io/core-icons/components/core-icons/demo.html
+    
+    

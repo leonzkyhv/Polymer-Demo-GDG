@@ -2,19 +2,48 @@
       href="bower_components/polymer/polymer.html">
  <link rel = "import"
        href="bower_components/paper-ripple/paper-ripple.html">
-<style>
-   .card{
-    background-color: red;   
-   }
-</style>
 
-<polymer-element name="proto-element" attributes = "myName">
+
+<polymer-element name="proto-element" attributes = "myName, img" >
   <template>
+      <style>
+        img{
+            width: 100px;
+            height 100px;
+            margin-top: 10px;
+            
+            float: left;
+        }
+        .card{
+              position: relative;
+              display: inline-block;
+              width:350px;
+              height:170px;
+              background-color: #5677fc;
+              box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+              color: #fFF;
+              text-align: center; 
+              font-size: 20px;
+              padding: 3px;
+        }
+          h1,h2{
+            float:right;
+           display: inline;
+           margin-right: 10px;   
+              
+          }
+         h1{
+           font-size: 20px; 
+          }
+          h2{
+           font-size: 14px;
+          }  
+      </style>
     <div class="card">
-       
-         <span>Hi! my name is <b> {{ myName }} </b>. Check out Polymer. {{some}}</span>
+         <img src = {{img}}>
+         <h1>Hi! my name is <b> {{ myName }} </b></h1> 
+         <h2>Check out Polymer.</h2>
          <paper-ripple class="recenteringTouch" fit>
-      
         </paper-ripple>
     </div>
   </template>
